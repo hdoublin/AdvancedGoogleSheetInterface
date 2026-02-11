@@ -1,0 +1,18 @@
+# Default Pull Reviewer configuration
+# You can see all the configuration options at https://docs.pullreviewer.com/configuration/
+
+version: 1.0.0
+
+settings:
+  enabled: true
+
+rules:
+  - name: "Reviewers changes"
+    id: reviewers_changes
+    description: "Changes to the repository reviewer settings."
+    enabled: true
+    when:
+      paths: [".github/reviewers.yml"]
+    reviewers:
+      users: [userOne, userTwo]
+      required: 1
